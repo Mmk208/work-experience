@@ -1,0 +1,58 @@
+package Tag5;
+
+import java.text.Collator;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Scanner;
+
+
+public class Aufgabe2 {
+	
+	
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		while(true) {
+
+
+
+
+			System.out.println("Gib den Namen ein oder exit");
+			String wort = sc.nextLine();
+			
+
+			if(wort.equals("exit")) {
+				break;				
+			}
+			System.out.println("Length = " + wort.length());
+			
+			
+			char[] chr = wort.toCharArray();		
+
+
+			for(int i=0;i<(chr.length-1);i++)
+	        {
+				
+	            for(int j=i+1;j>0;j--)
+	            { 
+	            	char c1 = chr[j - 1];
+	            	char c2 = chr[j];
+	            	
+	                if(Character.toUpperCase(c1) > Character.toUpperCase(c2))
+	                {
+	                    chr[j-1] = c2;
+	                    chr[j] = c1;
+	                }
+	            }
+	        }
+			String SortedString = new String(chr);
+			
+			System.out.println(SortedString);
+
+
+
+
+		}
+	}
+
+	
+}
